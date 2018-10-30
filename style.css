@@ -1,0 +1,87 @@
+body {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+}
+h1 {
+    text-align: center;
+}
+
+#background-game {
+    width: 400px;
+    height: 250px;
+    background-image: url('images/Background.png');
+    background-size: cover;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+
+#pierre {
+    width: 45px;
+    height: 45px;
+    background-image: url('images/Pierre.png');
+    background-size: cover;
+}
+#feuille {
+    width: 45px;
+    height: 45px;
+    background-image: url('images/Feuille.png');
+    background-size: cover;
+}
+#ciseau {
+    width: 45px;
+    height: 45px;
+    background-image: url('images/Ciseau.png');
+    background-size: cover;
+}
+
+.contenu {
+    display: Flex;
+    justify-content: space-around;
+}
+
+#user-score {
+    background-color: red;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    width: 60px;
+    height: 60px;
+}
+#cpu-score {
+    background-color: red;
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+}
+#img-user-choice {
+    background-size: cover;
+    position: absolute;
+    top: 170px;
+    left: 630px;
+    width: 45px;
+    height: 45px;
+
+}
+#img-cpu-choice {
+    background-size: cover;
+    position: absolute;
+    top: 170px;
+    right: 635px;
+    width: 45px;
+    height: 45px;
+}
+#footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height:  60px;
+    color: white;
+}
