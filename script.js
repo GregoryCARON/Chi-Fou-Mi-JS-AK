@@ -1,9 +1,11 @@
 var userCount = 0;
 var cpuCount = 0;
+
 var username = prompt('Entrez votre nom :', 'Visiteur');
 if (username == '') {
     username = 'Visiteur';
 }
+
 document.getElementById('user-score').innerHTML = username;
 
 document.getElementById('pierre').addEventListener("click", function() {
