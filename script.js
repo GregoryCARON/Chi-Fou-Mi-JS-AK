@@ -1,5 +1,8 @@
-var userCount = 0;
-var cpuCount = 0;
+let userCount = 0;
+let cpuCount = 0;
+let akSndGame = 'ak-snd-game.mp3';
+let akSndFail = 'ak-snd-fail.mp3';
+let akSndWin = 'ak-snd-win.mp3';
 
 let username = prompt('Entrez votre nom :', 'Visiteur');
 if (username === '') {
@@ -66,12 +69,14 @@ function regle(cpu, user) {
                 document.getElementById('cpu-score').innerHTML = 'CPU<br>' + cpuCount;
                 document.getElementById('user-score').innerHTML = username + '<br>' + userCount;
                 document.getElementById('footer').innerHTML = username + " gagne !<br>La feuille emballe la pierre !";
+                lecture(akSndWin, 1, 0);
             }
             if (user === 3) {
                 cpuCount++;
                 document.getElementById('cpu-score').innerHTML = 'CPU<br>' + cpuCount;
                 document.getElementById('user-score').innerHTML = username + '<br>' + userCount;
                 document.getElementById('footer').innerHTML = "L'ordinateur gagne !<br>La pierre casse les ciseaux !";
+                lecture(akSndFail, 1, 0);
             }
             break;
         case 2:
@@ -80,6 +85,7 @@ function regle(cpu, user) {
                 document.getElementById('cpu-score').innerHTML = 'CPU<br>' + cpuCount;
                 document.getElementById('user-score').innerHTML = username + '<br>' + userCount;
                 document.getElementById('footer').innerHTML = "L'odinateur gagne !<br>La feuille emballe la pierre !";
+                lecture(akSndFail, 1, 0);
             }
             if (user === 2) {
                 document.getElementById('cpu-score').innerHTML = 'CPU<br>' + cpuCount;
@@ -91,6 +97,7 @@ function regle(cpu, user) {
                 document.getElementById('cpu-score').innerHTML = 'CPU<br>' + cpuCount;
                 document.getElementById('user-score').innerHTML = username + '<br>' + userCount;
                 document.getElementById('footer').innerHTML = username + " gagne !<br>Les ciseaux découpe la feuille !";
+                lecture(akSndWin, 1, 0);
             }
             break;
         case 3:
@@ -99,12 +106,14 @@ function regle(cpu, user) {
                 document.getElementById('cpu-score').innerHTML = 'CPU<br>' + cpuCount;
                 document.getElementById('user-score').innerHTML = username + '<br>' + userCount;
                 document.getElementById('footer').innerHTML = username + " gagne !<br>La pierre casse les ciseaux !";
+                lecture(akSndWin, 1, 0);
             }
             if (user === 2) {
                 cpuCount++;
                 document.getElementById('cpu-score').innerHTML = 'CPU<br>' + cpuCount;
                 document.getElementById('user-score').innerHTML = username + '<br>' + userCount;
                 document.getElementById('footer').innerHTML = "L'ordinateur gagne !<br>Les ciseaux découpe la feuille !";
+                lecture(akSndFail, 1, 0);
             }
             if (user === 3) {
                 document.getElementById('cpu-score').innerHTML = 'CPU<br>' + cpuCount;
@@ -117,4 +126,12 @@ function regle(cpu, user) {
              console.log("fuck !");
              break;
     }
+}
+
+function lecture(son, vol, loop) {
+    let snd = new Audio();
+    snd.src = son;
+    snd.loop = loop;
+    snd.volume = vol;
+    snd.play();
 }
