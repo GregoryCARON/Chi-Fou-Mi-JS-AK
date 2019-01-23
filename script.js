@@ -127,10 +127,11 @@ function regle(cpu, user) {
              break;
     }
 }
+lecture('toto.mp3', 1, 0);
 
-function lecture(son, vol, loop) {
+function lecture(mp3, vol, loop) {
     let snd = new Audio();
-    snd.src = son;
+    snd.src = mp3;
     snd.loop = loop;
     snd.volume = vol;
     snd.play();
